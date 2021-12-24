@@ -18,10 +18,10 @@ public class EmployeeWage
         int totalEmpHrs = 0;
         System.out.println("Welcome to Employee Computation Program");
 
-        while (totalWorkingDays <= NUM_OF_WORKING_DAYS && totalEmpHrs <= MAX_WORKING_HRS)
+        while (totalWorkingDays < NUM_OF_WORKING_DAYS && totalEmpHrs <MAX_WORKING_HRS)
         {
             totalWorkingDays++;
-            double empCheck = Math.floor(Math.random() * 10) % 3;
+            double empCheck = (Math.floor(Math.random() * 10) % 2) + 1;
             switch ((int) empCheck)
             {
                 case IS_FULL_TIME:
@@ -38,6 +38,8 @@ public class EmployeeWage
             totalEmpHrs += empHrs;
         }
         salary = (totalEmpHrs * EMP_RATE_PER_HR);
+        System.out.println("Total working days "+totalWorkingDays );
+        System.out.println("Total working hrs " +totalEmpHrs);
         System.out.println("Employee Wage for a month is " + salary);
     }
 }
